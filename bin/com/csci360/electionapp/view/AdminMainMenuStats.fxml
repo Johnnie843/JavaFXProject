@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-image: url(&quot;/com/csci360/electionapp/images/BetterBallotDashboardStats.jpg&quot;); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.csci360.electionapp.controller.AdminStatsController">
+   <children>
+      <VBox layoutX="1.0" layoutY="41.0" prefHeight="559.0" prefWidth="147.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="452.0" AnchorPane.topAnchor="41.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#adminView" prefHeight="26.0" prefWidth="147.0" style="-fx-background-color: transparent;" styleClass="goToLoginPageButton" stylesheets="@Style.css" text="Administration" textFill="#9ba5ac" />
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="147.0" style="-fx-background-color: transparent;" styleClass="createAccountButton" stylesheets="@Style.css" text="Statistics         " textFill="#9ba5ac" />
+            <Button mnemonicParsing="false" onAction="#settingsView" prefHeight="35.0" prefWidth="147.0" style="-fx-background-color: transparent;" styleClass="createAccountButton" stylesheets="@Style.css" text="Settings          " textFill="#9ba5ac" />
+         </children></VBox>
+      <HBox layoutX="154.0" prefHeight="39.0" prefWidth="600.0" AnchorPane.bottomAnchor="568.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#goToLoginScreen" prefHeight="23.0" prefWidth="67.0" style="-fx-background-color: transparent;" styleClass="goToLoginPageButton" stylesheets="@Style.css" text="Logout" textFill="#9ba5ac">
+               <HBox.margin>
+                  <Insets left="530.0" top="5.0" />
+               </HBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+         </children>
+      </HBox>
+      <ScrollPane id="scroll-pane" hbarPolicy="NEVER" layoutX="187.0" layoutY="51.0" prefHeight="457.0" prefWidth="134.0" stylesheets="@Style.css" vbarPolicy="ALWAYS">
+         <content>
+            <TableView id="table-view" fx:id="ballotTable" prefHeight="453.0" prefWidth="116.0" stylesheets="@Style.css">
+               <columns>
+                  <TableColumn fx:id="ballotNameColumn" editable="false" prefWidth="130.0" text="Select Ballot:" />
+               </columns>
+               <placeholder>
+                  <Label text="" />
+               </placeholder>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <ScrollPane id="scroll-pane" hbarPolicy="NEVER" layoutX="321.0" layoutY="41.0" prefHeight="457.0" prefWidth="248.0" stylesheets="@Style.css" vbarPolicy="ALWAYS">
+         <content>
+            <VBox prefHeight="458.0" prefWidth="251.0">
+               <children>
+                  <PieChart fx:id="pieChart" prefHeight="270.0" prefWidth="251.0" stylesheets="@Style.css" />
+                  <GridPane fx:id="gridPane" prefHeight="202.0" prefWidth="251.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="128.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="104.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="91.0"  minWidth="10.0" prefWidth="19.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="100.0" text="Candidate" textAlignment="CENTER" textFill="#9ba5ac" underline="true">
+                           <opaqueInsets>
+                              <Insets left="20.0" />
+                           </opaqueInsets>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="103.0" text="Current Count" textAlignment="CENTER" textFill="#9ba5ac" underline="true" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
